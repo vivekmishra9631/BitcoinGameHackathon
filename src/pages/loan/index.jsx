@@ -30,9 +30,17 @@ import { useAccount } from "wagmi";
 import { shortenAddress } from "../../utils/shortenAddress";
 import { readContract, writeContract, waitForTransaction } from "@wagmi/core";
 import {
+<<<<<<< HEAD
   PAYBRIDGE_ABI,
   PAYBRIDGE_MANAGER_ABI,
   PAYBRIDGE_MANAGER_ADDRESS,
+=======
+  FUSE_PAY_ABI,
+  FUSE_PAY_MANAGER_ABI,
+  FUSE_PAY_MANAGER_ADDRESS,
+  USDT_CONTRACT_ADDRESS,
+  USDT_ABI,
+>>>>>>> 426d059 (first commit)
 } from "../../utils/contracts";
 
 const Index = () => {
@@ -64,7 +72,11 @@ const Index = () => {
 
       const { hash } = await writeContract({
         address: companyAddress,
+<<<<<<< HEAD
         abi: PAYBRIDGE_ABI,
+=======
+        abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
         functionName: "requestLoan",
         args: [amount, reason],
       });
@@ -87,7 +99,11 @@ const Index = () => {
       alert(companyAdd);
       const allLoanRequests = await readContract({
         address: companyAdd,
+<<<<<<< HEAD
         abi: PAYBRIDGE_ABI,
+=======
+        abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
         functionName: "getAllLoanRequests",
         args: [],
       });
@@ -100,21 +116,36 @@ const Index = () => {
   const getUserCompanies = async () => {
     try {
       const employeeCompanies = await readContract({
+<<<<<<< HEAD
         address: PAYBRIDGE_MANAGER_ADDRESS,
         abi: PAYBRIDGE_MANAGER_ABI,
+=======
+        address: FUSE_PAY_MANAGER_ADDRESS,
+        abi: FUSE_PAY_MANAGER_ABI,
+>>>>>>> 426d059 (first commit)
         functionName: "getEmployeeCompanies",
         args: [address],
       });
       const adminCompanies = await readContract({
+<<<<<<< HEAD
         address: PAYBRIDGE_MANAGER_ADDRESS,
         abi: PAYBRIDGE_MANAGER_ABI,
+=======
+        address: FUSE_PAY_MANAGER_ADDRESS,
+        abi: FUSE_PAY_MANAGER_ABI,
+>>>>>>> 426d059 (first commit)
         functionName: "getAdminCompanies",
         args: [address],
       });
 
       // const getAllCompanies = await readContract({
+<<<<<<< HEAD
       //   address: PAYBRIDGE_MANAGER_ADDRESS,
       //   abi: PAYBRIDGE_MANAGER_ABI,
+=======
+      //   address: FUSE_PAY_MANAGER_ADDRESS,
+      //   abi: FUSE_PAY_MANAGER_ABI,
+>>>>>>> 426d059 (first commit)
       //   functionName: "getCompanies",
       //   args: [],
       // });
@@ -126,14 +157,22 @@ const Index = () => {
       for (let i = 0; i < employeeCompanies.length; i++) {
         const companyCID = await readContract({
           address: employeeCompanies[i],
+<<<<<<< HEAD
           abi: PAYBRIDGE_ABI,
+=======
+          abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
           functionName: "companyCID",
           args: [],
         });
 
         const admin = await readContract({
           address: employeeCompanies[i],
+<<<<<<< HEAD
           abi: PAYBRIDGE_ABI,
+=======
+          abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
           functionName: "admin",
           args: [],
         });
@@ -164,7 +203,11 @@ const Index = () => {
       for (let i = 0; i < adminCompanies.length; i++) {
         const companyCID = await readContract({
           address: adminCompanies[i],
+<<<<<<< HEAD
           abi: PAYBRIDGE_ABI,
+=======
+          abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
           functionName: "companyCID",
           args: [],
         });

@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+<<<<<<< HEAD
 import { fileURLToPath } from 'url';
 import path from 'path';
 
@@ -19,6 +20,10 @@ const nextConfig = {
     config.resolve.alias['konsta'] = path.resolve(__dirname, 'node_modules/konsta');
     return config;
   },
+=======
+const nextConfig = {
+  reactStrictMode: true,
+>>>>>>> 426d059 (first commit)
 };
 
 export default nextConfig;

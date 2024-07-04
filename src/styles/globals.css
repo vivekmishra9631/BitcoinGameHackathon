@@ -3,22 +3,34 @@
 @tailwind utilities;
 
 :root {
+<<<<<<< HEAD
   --foreground-rgb: 255, 255, 255; /* Make text white */
   --background-start-rgb: 29, 45, 68; /* Dark blue gradient start */
   --background-end-rgb: 0, 82, 204; /* Light blue gradient end */
+=======
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+>>>>>>> 426d059 (first commit)
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
+<<<<<<< HEAD
     --background-start-rgb: 29, 45, 68;
     --background-end-rgb: 0, 82, 204;
+=======
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+>>>>>>> 426d059 (first commit)
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
+<<<<<<< HEAD
     to bottom,
     rgb(var(--background-start-rgb)),
     rgb(var(--background-end-rgb))
@@ -36,6 +48,14 @@ body {
   max-height: 300px; /* Set maximum height for the container */
 }
 
+=======
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+>>>>>>> 426d059 (first commit)
 .company-logo {
   display: flex;
   flex-direction: row;
@@ -81,7 +101,10 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+<<<<<<< HEAD
   .white-text {
     color: white;
   }
+=======
+>>>>>>> 426d059 (first commit)
 }

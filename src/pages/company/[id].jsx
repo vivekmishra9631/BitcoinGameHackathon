@@ -29,9 +29,17 @@ import { useAccount } from "wagmi";
 import { shortenAddress } from "../../utils/shortenAddress";
 import { readContract, writeContract, waitForTransaction } from "@wagmi/core";
 import {
+<<<<<<< HEAD
   PAYBRIDGE_ABI,
   PAYBRIDGE_MANAGER_ABI,
   PAYBRIDGE_MANAGER_ADDRESS,
+=======
+  FUSE_PAY_ABI,
+  FUSE_PAY_MANAGER_ABI,
+  FUSE_PAY_MANAGER_ADDRESS,
+  USDT_CONTRACT_ADDRESS,
+  USDT_ABI,
+>>>>>>> 426d059 (first commit)
 } from "../../utils/contracts";
 import Notify from "@/components/notify";
 import { FaCopy } from "react-icons/fa";
@@ -41,6 +49,10 @@ const ViewCompany = () => {
   const router = useRouter();
 
   const [companyName, setCompanyName] = useState("");
+<<<<<<< HEAD
+=======
+  const [companyLogo, setCompanyLogo] = useState("");
+>>>>>>> 426d059 (first commit)
   const [members, setMembers] = useState([]);
   const [admin, setAdmin] = useState("");
   const [depositAmount, setDepositAmount] = useState("");
@@ -87,7 +99,11 @@ const ViewCompany = () => {
 
       const deposit = await writeContract({
         address: companyAddress,
+<<<<<<< HEAD
         abi: PAYBRIDGE_ABI,
+=======
+        abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
         functionName: "depositUSDC",
         args: [ToApprove],
       });
@@ -110,7 +126,11 @@ const ViewCompany = () => {
       setInTxnSalary(true);
       const { hash } = await writeContract({
         address: companyAddress,
+<<<<<<< HEAD
         abi: PAYBRIDGE_ABI,
+=======
+        abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
         functionName: "addMonthlySalaries",
         args: [],
       });
@@ -137,7 +157,11 @@ const ViewCompany = () => {
 
       const { hash } = await writeContract({
         address: companyAddress,
+<<<<<<< HEAD
         abi: PAYBRIDGE_ABI,
+=======
+        abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
         functionName: "selectEmployeeAward",
         args: [employeeAddr],
       });
@@ -169,7 +193,11 @@ const ViewCompany = () => {
 
       const { hash } = await writeContract({
         address: companyAddress,
+<<<<<<< HEAD
         abi: PAYBRIDGE_ABI,
+=======
+        abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
         functionName: "withdrawSalary",
         args: [ToApprove],
       });
@@ -190,7 +218,11 @@ const ViewCompany = () => {
     try {
       const companyCID = await readContract({
         address: companyAddress,
+<<<<<<< HEAD
         abi: PAYBRIDGE_ABI,
+=======
+        abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
         functionName: "companyCID",
         args: [],
       });
@@ -205,7 +237,11 @@ const ViewCompany = () => {
 
       const companyAdmin = await readContract({
         address: companyAddress,
+<<<<<<< HEAD
         abi: PAYBRIDGE_ABI,
+=======
+        abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
         functionName: "admin",
         args: [],
       });
@@ -214,7 +250,11 @@ const ViewCompany = () => {
 
       const getEmployees = await readContract({
         address: companyAddress,
+<<<<<<< HEAD
         abi: PAYBRIDGE_ABI,
+=======
+        abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
         functionName: "getEmployees",
         args: [],
       });
@@ -224,14 +264,22 @@ const ViewCompany = () => {
 
       const getEmployeeWalletBalance = await readContract({
         address: companyAddress,
+<<<<<<< HEAD
         abi: PAYBRIDGE_ABI,
+=======
+        abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
         functionName: "getEmployeeWalletBalance",
         args: [address],
       });
       setWalletBalance(ethers.utils.formatEther(getEmployeeWalletBalance));
       const getEmployeeSalary = await readContract({
         address: companyAddress,
+<<<<<<< HEAD
         abi: PAYBRIDGE_ABI,
+=======
+        abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
         functionName: "getEmployeeSalary",
         args: [address],
       });
@@ -243,7 +291,11 @@ const ViewCompany = () => {
       for (let i = 0; i < getEmployees.length; i++) {
         const employeeName = await readContract({
           address: companyAddress,
+<<<<<<< HEAD
           abi: PAYBRIDGE_ABI,
+=======
+          abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
           functionName: "employeeNames",
           args: [getEmployees[i]],
         });
@@ -265,6 +317,10 @@ const ViewCompany = () => {
 
       const companyData = axiosResponse.data;
       setCompanyName(companyData.companyName);
+<<<<<<< HEAD
+=======
+      setCompanyLogo(companyData.companyLogo);
+>>>>>>> 426d059 (first commit)
     } catch (error) {
       console.log(error);
     }
@@ -274,7 +330,11 @@ const ViewCompany = () => {
     try {
       const awardee = await readContract({
         address: companyAddress,
+<<<<<<< HEAD
         abi: PAYBRIDGE_ABI,
+=======
+        abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
         functionName: "employeeAward",
         args: [],
       });
@@ -282,7 +342,11 @@ const ViewCompany = () => {
       if (awardee) {
         const Name = await readContract({
           address: companyAddress,
+<<<<<<< HEAD
           abi: PAYBRIDGE_ABI,
+=======
+          abi: FUSE_PAY_ABI,
+>>>>>>> 426d059 (first commit)
           functionName: "employeeNames",
           args: [awardee],
         });
@@ -313,8 +377,13 @@ const ViewCompany = () => {
       const wage = ethers.utils.parseEther(employeeWage);
 
       const addWorker = await writeContract({
+<<<<<<< HEAD
         address: PAYBRIDGE_MANAGER_ADDRESS,
         abi: PAYBRIDGE_MANAGER_ABI,
+=======
+        address: FUSE_PAY_MANAGER_ADDRESS,
+        abi: FUSE_PAY_MANAGER_ABI,
+>>>>>>> 426d059 (first commit)
         functionName: "addEmployee",
         args: [employeeAddress, companyAddress, wage, employeeName],
       });
@@ -365,6 +434,15 @@ const ViewCompany = () => {
 
       <div className="m-5">
         <div className="company-logo">
+<<<<<<< HEAD
+=======
+          <img
+            class="w-20 h-20 rounded-full"
+            src={`https://gateway.lighthouse.storage/ipfs/${companyLogo}`}
+            alt="Fuse"
+          ></img>
+
+>>>>>>> 426d059 (first commit)
           <span>
             {companyName} <br />
             {admin === address ? (
@@ -569,7 +647,11 @@ const ViewCompany = () => {
         )}
 
         <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+<<<<<<< HEAD
         <BlockTitle>PayBridge Wallet</BlockTitle>
+=======
+        <BlockTitle>FusePay Wallet</BlockTitle>
+>>>>>>> 426d059 (first commit)
         <Block strong inset>
           Your Balance: <strong> {walletBalance} cUSD</strong>{" "}
           <span className="font-bold ml-4 mr-4">| </span> Your monthly Salary:{" "}

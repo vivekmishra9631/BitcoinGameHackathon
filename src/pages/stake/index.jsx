@@ -30,12 +30,20 @@ import { useAccount } from "wagmi";
 import { shortenAddress } from "../../utils/shortenAddress";
 import { readContract, writeContract, waitForTransaction } from "@wagmi/core";
 import {
+<<<<<<< HEAD
   PAYBRIDGE_ABI,
   PAYBRIDGE_MANAGER_ABI,
   PAYBRIDGE_MANAGER_ADDRESS,
   USDT_CONTRACT_ADDRESS,
   USDT_ABI,
   STAKER_ABI,
+=======
+  FUSE_PAY_ABI,
+  FUSE_PAY_MANAGER_ABI,
+  FUSE_PAY_MANAGER_ADDRESS,
+  USDT_CONTRACT_ADDRESS,
+  USDT_ABI,
+>>>>>>> 426d059 (first commit)
 } from "../../utils/contracts";
 
 const Index = () => {
@@ -51,6 +59,7 @@ const Index = () => {
 
   const [loanRequests, setLoanRequests] = useState([]);
 
+<<<<<<< HEAD
   const stake = async () => {
     try {
       if (!stakeAmount) {
@@ -84,6 +93,8 @@ const Index = () => {
     }
   };
 
+=======
+>>>>>>> 426d059 (first commit)
   useEffect(() => {}, [address]);
   return (
     <Layout>
@@ -136,10 +147,14 @@ const Index = () => {
             {inTxn ? (
               <Preloader className="center-item mt-3" />
             ) : (
+<<<<<<< HEAD
               <button
                 onClick={stake}
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
+=======
+              <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+>>>>>>> 426d059 (first commit)
                 Stake
               </button>
             )}
