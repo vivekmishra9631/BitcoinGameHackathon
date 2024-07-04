@@ -104,4 +104,8 @@ const Layout = ({ children }) => {
   );
 };
 
+<<<<<<< HEAD
 export default Layout;
+=======
+export default Layout;
+>>>>>>> 426d059 (first commit)

@@ -10,10 +10,13 @@ module.exports = konstaConfig({
   ],
   theme: {
     extend: {
+<<<<<<< HEAD
       transitionProperty: {
         height: "height",
         spacing: "margin, padding",
       },
+=======
+>>>>>>> 426d059 (first commit)
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -22,6 +25,12 @@ module.exports = konstaConfig({
     },
   },
   darkMode: "media", // or 'class'
+<<<<<<< HEAD
+=======
+  theme: {
+    extend: {},
+  },
+>>>>>>> 426d059 (first commit)
   variants: {
     extend: {},
   },
