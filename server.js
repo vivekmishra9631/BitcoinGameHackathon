@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require("express");
 const axios = require("axios");
 const bodyParser = require("body-parser");
@@ -9,12 +10,19 @@ const {
   exampleQA,
   systemPrompt,
 } = require("./src/pages/api/promptGenerator");
+=======
+const express = require('express');
+const axios = require('axios');
+const bodyParser = require('body-parser');
+require('dotenv').config();
+>>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
 
 const app = express();
 app.use(bodyParser.json());
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
+<<<<<<< HEAD
 app.post("/api/chat", async (req, res) => {
   const { message } = req.body;
 
@@ -38,22 +46,45 @@ app.post("/api/chat", async (req, res) => {
       {
         model: "gpt-4",
         messages: prompt,
+=======
+app.post('/api/chat', async (req, res) => {
+  const { message } = req.body;
+
+  try {
+    const response = await axios.post(
+      'https://api.openai.com/v1/chat/completions',
+      {
+        model: 'gpt-4',
+        messages: [{ role: 'user', content: message }],
+>>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
         max_tokens: 150,
         temperature: 0.7,
       },
       {
         headers: {
+<<<<<<< HEAD
           "Content-Type": "application/json",
           Authorization: `Bearer ${OPENAI_API_KEY}`,
         },
       },
+=======
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${OPENAI_API_KEY}`,
+        },
+      }
+>>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
     );
 
     const text = response.data.choices[0].message.content.trim();
     res.json({ text });
   } catch (error) {
+<<<<<<< HEAD
     console.error("Error communicating with OpenAI:", error);
     res.status(500).send("Error communicating with OpenAI");
+=======
+    console.error('Error communicating with OpenAI:', error);
+    res.status(500).send('Error communicating with OpenAI');
+>>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
   }
 });
 

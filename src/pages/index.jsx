@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { writeContract } from "@wagmi/core";
 import axios from "axios";
 import { ethers } from "ethers";
@@ -29,35 +30,43 @@ import {
 import Layout from "./Layout";
 import { exampleQA } from "./api/promptGenerator";
 =======
+=======
+import { writeContract } from "@wagmi/core";
+import axios from "axios";
+import { ethers } from "ethers";
+>>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
 import {
-  Page,
-  Navbar,
   Block,
+  BlockTitle,
   Button,
+  Chip,
+  Link,
   List,
   ListItem,
-  Link,
-  Sheet,
-  Preloader,
+  Navbar,
   Notification,
-  BlockTitle,
+  Page,
+  Preloader,
+  Sheet,
   Toast,
-  Chip,
 } from "konsta/react";
-import { ethers } from "ethers";
-import { useEffect, useState } from "react";
-import CeloICON from "/public/celo.png";
 import Image from "next/image";
-import Layout from "./Layout";
+import { useEffect, useState } from "react";
+import { useAccount, useBalance } from "wagmi";
 import { config } from "../utils/config";
-import { pushImgToStorage, putJSONandGetHash } from "../utils/ipfsGateway";
 import {
   FUSE_PAY_MANAGER_ABI,
   FUSE_PAY_MANAGER_ADDRESS,
 } from "../utils/contracts";
+<<<<<<< HEAD
 import { writeContract } from "@wagmi/core";
 import { useAccount, useBalance } from "wagmi";
 >>>>>>> 426d059 (first commit)
+=======
+import { pushImgToStorage, putJSONandGetHash } from "../utils/ipfsGateway";
+import Layout from "./Layout";
+import CeloICON from "/public/celo.png";
+>>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
 
 export default function Home() {
   const { address } = useAccount();
@@ -77,6 +86,7 @@ export default function Home() {
   const [alertOpened, setAlertOpened] = useState(false);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   const [chatSheetOpened, setChatSheetOpened] = useState(false);
   const [chatInput, setChatInput] = useState("");
   const [chatResponse, setChatResponse] = useState("");
@@ -84,6 +94,12 @@ export default function Home() {
 
 =======
 >>>>>>> 426d059 (first commit)
+=======
+  const [chatSheetOpened, setChatSheetOpened] = useState(false);
+  const [chatInput, setChatInput] = useState("");
+  const [chatResponse, setChatResponse] = useState("");
+
+>>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
   const openNotification = (setter) => {
     setNotificationWithButton(false);
     setter(true);
@@ -91,10 +107,14 @@ export default function Home() {
 
   const handleUploadImage = async (e) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
     const file = e.target.files[0];
 =======
     const file = e.target.files;
 >>>>>>> 426d059 (first commit)
+=======
+    const file = e.target.files[0];
+>>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
     const allowedTypes = ["image/jpeg", "image/png"];
     const maxSize = 2 * 1024 * 1024; // 3MB in bytes
 
@@ -162,6 +182,9 @@ export default function Home() {
   };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
   const handleChatSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -172,6 +195,7 @@ export default function Home() {
     }
   };
 
+<<<<<<< HEAD
   const toggleAnswer = (index) => {
     setShowAnswer(showAnswer === index ? null : index);
   };
@@ -185,6 +209,8 @@ export default function Home() {
           }
         />
 =======
+=======
+>>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
   return (
     <>
       <Layout>
@@ -286,7 +312,7 @@ export default function Home() {
                   className="inline-flex bg-blue-700 max-w-sm justify-center items-center gap-x-3 text-center shadow-2xl shadow-transparent hover:shadow-blue-700/70 border border-transparent text-white font-bold rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800 hover:text-gray-200"
 =======
                     fill-rule="evenodd"
-                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a 1 1 0 01-1.414 0z"
                     clip-rule="evenodd"
                   ></path>
                 </svg>
@@ -373,6 +399,26 @@ export default function Home() {
                     />
                   </svg>
                 </Link>
+                <Link
+                  onClick={() => setChatSheetOpened(true)}
+                  className="inline-flex bg-green-600 max-w-sm justify-center items-center gap-x-3 text-center shadow-lg shadow-transparent hover:shadow-green-700/50 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800"
+                >
+                  Open ChatGPT
+                  <svg
+                    className="w-2.5 h-2.5"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </Link>
               </div>
             </div>
           </section>
@@ -425,8 +471,12 @@ export default function Home() {
                       Kickstart Payrolls and Secure Work Loans Effortlessly
                     </h2>
                     <p className="text-gray-500">
+<<<<<<< HEAD
                       Use our services to inittiate payroll and transactions and
 >>>>>>> 426d059 (first commit)
+=======
+                      Use our services to initiate payroll and transactions and
+>>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
                       loan requests for your Team/ workers.
                     </p>
                   </div>
@@ -705,6 +755,7 @@ export default function Home() {
           </div>
         </Sheet>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <Sheet
           className="pb-safe fixed inset-0 bg-gray-800 text-white p-4 transition-transform transform"
           opened={chatSheetOpened}
@@ -719,10 +770,23 @@ export default function Home() {
               <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                   Chat with BitBot 🤖
+=======
+        <Sheet
+          className="pb-safe"
+          opened={chatSheetOpened}
+          onBackdropClick={() => setChatSheetOpened(false)}
+        >
+          <div class="relative p-4 w-full max-w-md max-h-full mb-15">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                  Chat with ChatGPT
+>>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
                 </h3>
                 <button
                   onClick={() => setChatSheetOpened(false)}
                   type="button"
+<<<<<<< HEAD
                   className="text-gray-400 hover:text-gray-300"
                 >
                   <svg
@@ -759,11 +823,58 @@ export default function Home() {
                   <Button
                     type="submit"
                     className="w-full mt-2 bg-blue-500 hover:bg-blue-500 text-white font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 shadow-2xl shadow-transparent hover:shadow-blue-500/50 hover:text-white"
+=======
+                  class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  data-modal-hide="authentication-modal"
+                >
+                  <svg
+                    class="w-3 h-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                  <span class="sr-only">Close modal</span>
+                </button>
+              </div>
+              <div class="p-4 md:p-5">
+                <form onSubmit={handleChatSubmit}>
+                  <div>
+                    <label
+                      for="chatInput"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Message
+                    </label>
+                    <input
+                      type="text"
+                      name="chatInput"
+                      id="chatInput"
+                      value={chatInput}
+                      onChange={(e) => setChatInput(e.target.value)}
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                      placeholder="Ask something..."
+                      required
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    class="w-full mt-4 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+>>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
                   >
                     Send
                   </Button>
                 </form>
                 {chatResponse && (
+<<<<<<< HEAD
                   <div className="mt-4 p-4 dark:bg-blue-900 rounded-lg flex-grow text-white">
                     <h4 className="font-bold">Response:</h4>
                     <p>{chatResponse}</p>
@@ -790,12 +901,26 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+=======
+                  <div class="mt-4 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+                    <h4 class="font-bold text-gray-900 dark:text-white">
+                      Response:
+                    </h4>
+                    <p class="text-gray-700 dark:text-gray-200">
+                      {chatResponse}
+                    </p>
+                  </div>
+                )}
+>>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
               </div>
             </div>
           </div>
         </Sheet>
+<<<<<<< HEAD
 =======
 >>>>>>> 426d059 (first commit)
+=======
+>>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
       </Layout>
     </>
   );
