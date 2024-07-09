@@ -27,6 +27,7 @@ import {
 } from "../utils/contracts";
 import { pushImgToStorage, putJSONandGetHash } from "../utils/ipfsGateway";
 import Layout from "./Layout";
+import CeloICON from "/public/celo.png";
 
 export default function Home() {
   const { address } = useAccount();
@@ -124,7 +125,7 @@ export default function Home() {
   return (
     <>
       <Layout>
-        <Navbar title="PayBridge" />
+        <Navbar title="Fuse Pay" />
         <div className="h-full">
           <Notification
             opened={notificationWithButton}
@@ -150,49 +151,47 @@ export default function Home() {
               </Button>
             }
           ></Toast>
-          <section className="dark:bg-gradient-to-b from-blue-700/[4.79] via-gray-800 h-full">
-            <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-12">
+          <section class="dark:bg-gradient-to-b from-blue-700/[4.79] via-gray-800 h-full">
+            <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-12">
               <a
-                href="https://rootstock.io"
+                href="https://celo.org"
                 target="_blank"
-                className="inline-flex items-center justify-between px-1 py-1 pr-4 text-sm text-gray-700 bg-gray-100 rounded-full mb-7 dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
+                class="inline-flex items-center justify-between px-1 py-1 pr-4 text-sm text-gray-700 bg-gray-100 rounded-full mb-7 dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
                 role="alert"
               >
                 <Chip
                   media={
                     <img
-                      alt="rootstock"
+                      alt="celo"
                       className="ios:h-7 material:h-6 rounded-full"
-                      src="/rootstock.jpg"
+                      src="/celo.png"
                     />
                   }
-                  className="text-xs bg-black rounded-full text-white px-4 py-1.5 mr-3"
+                  class="text-xs bg-black rounded-full text-white px-4 py-1.5 mr-3"
                 ></Chip>{" "}
-                <span className="text-sm font-medium ml-2">
-                  Powered by Rootstock
-                </span>
+                <span class="text-sm font-medium ml-2">Powered by Celo</span>
                 <svg
-                  className="w-5 h-5 ml-2"
+                  class="w-5 h-5 ml-2"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fillRule="evenodd"
+                    fill-rule="evenodd"
                     d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a 1 1 0 01-1.414 0z"
-                    clipRule="evenodd"
+                    clip-rule="evenodd"
                   ></path>
                 </svg>
               </a>
-              <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                We Help manage your Companys Finance
+              <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                We Help manage your Company`s Finance
               </h1>
-              <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-                Here at PayBridge we focus on markets where AI technology,
+              <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+                Here at Fuse Pay we focus on markets where AI technology,
                 innovation, and capital can unlock long-term value and drive
                 economic growth.
               </p>
-              <div className="flex mb-8 align-center justify-center space-x-4 lg:mb-16 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+              <div class="flex mb-8 align-center justify-center space-x-4 lg:mb-16 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                 <Link
                   onClick={() => setSheetOpened(true)}
                   className="inline-flex bg-blue-600  max-w-sm justify-center items-center gap-x-3 text-center shadow-lg shadow-transparent hover:shadow-blue-700/50 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800"
@@ -237,7 +236,7 @@ export default function Home() {
                   onClick={() => setChatSheetOpened(true)}
                   className="inline-flex bg-green-600 max-w-sm justify-center items-center gap-x-3 text-center shadow-lg shadow-transparent hover:shadow-green-700/50 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800"
                 >
-                  Open Chatbot
+                  Open ChatGPT
                   <svg
                     className="w-2.5 h-2.5"
                     width="16"
@@ -326,7 +325,7 @@ export default function Home() {
 
                       <span className="text-sm sm:text-base text-gray-500">
                         <span className="font-bold">Low costs</span> – Covered
-                        by Rootstock
+                        by Celo
                       </span>
                     </li>
 
@@ -393,10 +392,10 @@ export default function Home() {
           opened={sheetOpened}
           onBackdropClick={() => setSheetOpened(false)}
         >
-          <div className="relative p-4 w-full max-w-md max-h-full mb-15">
-            <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-              <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+          <div class="relative p-4 w-full max-w-md max-h-full mb-15">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
                   Create a company workspace
                 </h3>
                 <button
@@ -404,11 +403,11 @@ export default function Home() {
                     setSheetOpened(false);
                   }}
                   type="button"
-                  className="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                   data-modal-hide="authentication-modal"
                 >
                   <svg
-                    className="w-3 h-3"
+                    class="w-3 h-3"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -416,20 +415,20 @@ export default function Home() {
                   >
                     <path
                       stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
                       d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
                     />
                   </svg>
-                  <span className="sr-only">Close modal</span>
+                  <span class="sr-only">Close modal</span>
                 </button>
               </div>
-              <div className="p-4 md:p-5">
+              <div class="p-4 md:p-5">
                 <div>
                   <label
-                    htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    for="email"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Company Name
                   </label>
@@ -440,16 +439,16 @@ export default function Home() {
                     type="text"
                     name="text"
                     id="text"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                    placeholder="PayBridge"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder="Fuse Pay"
                     required
                   />
                 </div>
 
                 <div>
                   <label
-                    htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    for="email"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Description
                   </label>
@@ -460,21 +459,21 @@ export default function Home() {
                     type="text"
                     name="text"
                     id="text"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                    placeholder="About PayBridge"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder="About Fuse Pay"
                     required
                   />
                 </div>
                 <div>
                   <label
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    htmlFor="default_size"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    for="default_size"
                   >
                     Company Logo
                   </label>
                   <input
                     onChange={handleUploadImage}
-                    className="block w-full mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                    class="block w-full mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                     id="default_size"
                     type="file"
                   />
@@ -483,7 +482,7 @@ export default function Home() {
                 {!inTxn ? (
                   <Button
                     onClick={createCompany}
-                    className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
                     Create
                   </Button>
@@ -495,67 +494,75 @@ export default function Home() {
           </div>
         </Sheet>
         <Sheet
-          className="pb-safe fixed inset-0 bg-gray-800 text-white p-4 transition-transform transform"
+          className="pb-safe"
           opened={chatSheetOpened}
           onBackdropClick={() => setChatSheetOpened(false)}
-          style={{ width: "50%", height: "90%", zIndex: 60 }} // Adjusted size for the larger chat window
         >
-          <div className="relative p-4 w-full h-full max-h-full mb-15 flex items-center justify-center">
-            <div
-              className="relative w-full h-full bg-white rounded-lg shadow dark:bg-gray-700"
-              style={{ height: "98%", width: "98%" }}
-            >
-              <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  Chat with BitBot 🤖
+          <div class="relative p-4 w-full max-w-md max-h-full mb-15">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                  Chat with ChatGPT
                 </h3>
                 <button
                   onClick={() => setChatSheetOpened(false)}
                   type="button"
-                  className="text-gray-400 hover:text-gray-300"
+                  class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  data-modal-hide="authentication-modal"
                 >
                   <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                    class="w-3 h-3"
+                    aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
                   >
                     <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M6 18L18 6M6 6l12 12"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
                     />
                   </svg>
+                  <span class="sr-only">Close modal</span>
                 </button>
               </div>
-              <div
-                className="p-4 md:p-5 mt-4 overflow-y-auto flex-1"
-                style={{ paddingBottom: "5rem" }}
-              >
+              <div class="p-4 md:p-5">
                 <form onSubmit={handleChatSubmit}>
-                  <input
-                    type="text"
-                    name="chatInput"
-                    id="chatInput"
-                    value={chatInput}
-                    onChange={(e) => setChatInput(e.target.value)}
-                    className="w-full p-2 mt-1 bg-gray-700 border border-gray-600 rounded"
-                    placeholder="Ask something..."
-                    required
-                  />
+                  <div>
+                    <label
+                      for="chatInput"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Message
+                    </label>
+                    <input
+                      type="text"
+                      name="chatInput"
+                      id="chatInput"
+                      value={chatInput}
+                      onChange={(e) => setChatInput(e.target.value)}
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                      placeholder="Ask something..."
+                      required
+                    />
+                  </div>
                   <Button
                     type="submit"
-                    className="w-full mt-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg p-2"
+                    class="w-full mt-4 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                   >
                     Send
                   </Button>
                 </form>
                 {chatResponse && (
-                  <div className="mt-4 p-4 bg-gray-700 rounded-lg flex-grow">
-                    <h4 className="font-bold">Response:</h4>
-                    <p>{chatResponse}</p>
+                  <div class="mt-4 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+                    <h4 class="font-bold text-gray-900 dark:text-white">
+                      Response:
+                    </h4>
+                    <p class="text-gray-700 dark:text-gray-200">
+                      {chatResponse}
+                    </p>
                   </div>
                 )}
               </div>
