@@ -65,8 +65,11 @@ import { useAccount, useBalance } from "wagmi";
 =======
 import { pushImgToStorage, putJSONandGetHash } from "../utils/ipfsGateway";
 import Layout from "./Layout";
+<<<<<<< HEAD
 import CeloICON from "/public/celo.png";
 >>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
+=======
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
 
 export default function Home() {
   const { address } = useAccount();
@@ -214,8 +217,12 @@ export default function Home() {
   return (
     <>
       <Layout>
+<<<<<<< HEAD
         <Navbar title="Fuse Pay" />
 >>>>>>> 426d059 (first commit)
+=======
+        <Navbar title="PayBridge" />
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
         <div className="h-full">
           <Notification
             opened={notificationWithButton}
@@ -242,6 +249,7 @@ export default function Home() {
             }
           ></Toast>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <section className="dark:bg-gradient-to-b from-blue-700/[4.79] via-gray-800 h-full">
             <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-12">
               <a
@@ -251,16 +259,25 @@ export default function Home() {
 =======
           <section class="dark:bg-gradient-to-b from-blue-700/[4.79] via-gray-800 h-full">
             <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-12">
+=======
+          <section className="dark:bg-gradient-to-b from-blue-700/[4.79] via-gray-800 h-full">
+            <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-12">
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
               <a
-                href="https://celo.org"
+                href="https://rootstock.io"
                 target="_blank"
+<<<<<<< HEAD
                 class="inline-flex items-center justify-between px-1 py-1 pr-4 text-sm text-gray-700 bg-gray-100 rounded-full mb-7 dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
 >>>>>>> 426d059 (first commit)
+=======
+                className="inline-flex items-center justify-between px-1 py-1 pr-4 text-sm text-gray-700 bg-gray-100 rounded-full mb-7 dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                 role="alert"
               >
                 <Chip
                   media={
                     <img
+<<<<<<< HEAD
 <<<<<<< HEAD
                       alt="rootstock"
                       className="ios:h-7 material:h-6 rounded-full"
@@ -276,21 +293,31 @@ export default function Home() {
                   className="w-5 h-5 ml-2"
 =======
                       alt="celo"
+=======
+                      alt="rootstock"
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                       className="ios:h-7 material:h-6 rounded-full"
-                      src="/celo.png"
+                      src="/rootstock.jpg"
                     />
                   }
-                  class="text-xs bg-black rounded-full text-white px-4 py-1.5 mr-3"
+                  className="text-xs bg-black rounded-full text-white px-4 py-1.5 mr-3"
                 ></Chip>{" "}
-                <span class="text-sm font-medium ml-2">Powered by Celo</span>
+                <span className="text-sm font-medium ml-2">
+                  Powered by Rootstock
+                </span>
                 <svg
+<<<<<<< HEAD
                   class="w-5 h-5 ml-2"
 >>>>>>> 426d059 (first commit)
+=======
+                  className="w-5 h-5 ml-2"
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
+<<<<<<< HEAD
 <<<<<<< HEAD
                     fillRule="evenodd"
                     d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a 1 1 0 01-1.414 0z"
@@ -312,20 +339,23 @@ export default function Home() {
                   className="inline-flex bg-blue-700 max-w-sm justify-center items-center gap-x-3 text-center shadow-2xl shadow-transparent hover:shadow-blue-700/70 border border-transparent text-white font-bold rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800 hover:text-gray-200"
 =======
                     fill-rule="evenodd"
+=======
+                    fillRule="evenodd"
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                     d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a 1 1 0 01-1.414 0z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </a>
-              <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                We Help manage your Company`s Finance
+              <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                We Help manage your Companys Finance
               </h1>
-              <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-                Here at Fuse Pay we focus on markets where AI technology,
+              <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+                Here at PayBridge we focus on markets where AI technology,
                 innovation, and capital can unlock long-term value and drive
                 economic growth.
               </p>
-              <div class="flex mb-8 align-center justify-center space-x-4 lg:mb-16 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+              <div className="flex mb-8 align-center justify-center space-x-4 lg:mb-16 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                 <Link
                   onClick={() => setSheetOpened(true)}
                   className="inline-flex bg-blue-600  max-w-sm justify-center items-center gap-x-3 text-center shadow-lg shadow-transparent hover:shadow-blue-700/50 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800"
@@ -403,7 +433,7 @@ export default function Home() {
                   onClick={() => setChatSheetOpened(true)}
                   className="inline-flex bg-green-600 max-w-sm justify-center items-center gap-x-3 text-center shadow-lg shadow-transparent hover:shadow-green-700/50 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800"
                 >
-                  Open ChatGPT
+                  Open Chatbot
                   <svg
                     className="w-2.5 h-2.5"
                     width="16"
@@ -509,8 +539,12 @@ export default function Home() {
 =======
                       <span className="text-sm sm:text-base text-gray-500">
                         <span className="font-bold">Low costs</span> – Covered
+<<<<<<< HEAD
                         by Celo
 >>>>>>> 426d059 (first commit)
+=======
+                        by Rootstock
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                       </span>
                     </li>
 
@@ -586,16 +620,22 @@ export default function Home() {
           onBackdropClick={() => setSheetOpened(false)}
         >
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
           <div className="relative p-4 w-full max-w-md max-h-full mb-15">
             <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
               <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+<<<<<<< HEAD
 =======
           <div class="relative p-4 w-full max-w-md max-h-full mb-15">
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
               <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
 >>>>>>> 426d059 (first commit)
+=======
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                   Create a company workspace
                 </h3>
                 <button
@@ -603,6 +643,7 @@ export default function Home() {
                     setSheetOpened(false);
                   }}
                   type="button"
+<<<<<<< HEAD
 <<<<<<< HEAD
                   className="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                   data-modal-hide="authentication-modal"
@@ -616,6 +657,13 @@ export default function Home() {
                   <svg
                     class="w-3 h-3"
 >>>>>>> 426d059 (first commit)
+=======
+                  className="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  data-modal-hide="authentication-modal"
+                >
+                  <svg
+                    className="w-3 h-3"
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -623,6 +671,7 @@ export default function Home() {
                   >
                     <path
                       stroke="currentColor"
+<<<<<<< HEAD
 <<<<<<< HEAD
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -642,18 +691,28 @@ export default function Home() {
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
+=======
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                       d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
                     />
                   </svg>
-                  <span class="sr-only">Close modal</span>
+                  <span className="sr-only">Close modal</span>
                 </button>
               </div>
-              <div class="p-4 md:p-5">
+              <div className="p-4 md:p-5">
                 <div>
                   <label
+<<<<<<< HEAD
                     for="email"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
 >>>>>>> 426d059 (first commit)
+=======
+                    htmlFor="email"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                   >
                     Company Name
                   </label>
@@ -665,12 +724,17 @@ export default function Home() {
                     name="text"
                     id="text"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                     placeholder="PayBridge"
 =======
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                     placeholder="Fuse Pay"
 >>>>>>> 426d059 (first commit)
+=======
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder="PayBridge"
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                     required
                   />
                 </div>
@@ -678,12 +742,17 @@ export default function Home() {
                 <div>
                   <label
 <<<<<<< HEAD
+<<<<<<< HEAD
                     htmlFor="email"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
 =======
                     for="email"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
 >>>>>>> 426d059 (first commit)
+=======
+                    htmlFor="email"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                   >
                     Description
                   </label>
@@ -694,6 +763,7 @@ export default function Home() {
                     type="text"
                     name="text"
                     id="text"
+<<<<<<< HEAD
 <<<<<<< HEAD
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                     placeholder="About PayBridge"
@@ -717,19 +787,23 @@ export default function Home() {
 =======
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                     placeholder="About Fuse Pay"
+=======
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder="About PayBridge"
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                     required
                   />
                 </div>
                 <div>
                   <label
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    for="default_size"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    htmlFor="default_size"
                   >
                     Company Logo
                   </label>
                   <input
                     onChange={handleUploadImage}
-                    class="block w-full mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                    className="block w-full mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                     id="default_size"
                     type="file"
                   />
@@ -740,10 +814,14 @@ export default function Home() {
                   <Button
                     onClick={createCompany}
 <<<<<<< HEAD
+<<<<<<< HEAD
                     className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
 =======
                     class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
 >>>>>>> 426d059 (first commit)
+=======
+                    className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                   >
                     Create
                   </Button>
@@ -772,20 +850,33 @@ export default function Home() {
                   Chat with BitBot 🤖
 =======
         <Sheet
-          className="pb-safe"
+          className="pb-safe fixed inset-0 bg-gray-800 text-white p-4 transition-transform transform"
           opened={chatSheetOpened}
           onBackdropClick={() => setChatSheetOpened(false)}
+          style={{ width: "50%", height: "90%", zIndex: 60 }} // Adjusted size for the larger chat window
         >
+<<<<<<< HEAD
           <div class="relative p-4 w-full max-w-md max-h-full mb-15">
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
               <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
                   Chat with ChatGPT
 >>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
+=======
+          <div className="relative p-4 w-full h-full max-h-full mb-15 flex items-center justify-center">
+            <div
+              className="relative w-full h-full bg-white rounded-lg shadow dark:bg-gray-700"
+              style={{ height: "98%", width: "98%" }}
+            >
+              <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  Chat with BitBot 🤖
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                 </h3>
                 <button
                   onClick={() => setChatSheetOpened(false)}
                   type="button"
+<<<<<<< HEAD
 <<<<<<< HEAD
                   className="text-gray-400 hover:text-gray-300"
                 >
@@ -826,54 +917,55 @@ export default function Home() {
 =======
                   class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                   data-modal-hide="authentication-modal"
+=======
+                  className="text-gray-400 hover:text-gray-300"
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                 >
                   <svg
-                    class="w-3 h-3"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6"
                     fill="none"
-                    viewBox="0 0 14 14"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
                     />
                   </svg>
-                  <span class="sr-only">Close modal</span>
                 </button>
               </div>
-              <div class="p-4 md:p-5">
+              <div
+                className="p-4 md:p-5 mt-4 overflow-y-auto flex-1"
+                style={{ paddingBottom: "5rem" }}
+              >
                 <form onSubmit={handleChatSubmit}>
-                  <div>
-                    <label
-                      for="chatInput"
-                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      Message
-                    </label>
-                    <input
-                      type="text"
-                      name="chatInput"
-                      id="chatInput"
-                      value={chatInput}
-                      onChange={(e) => setChatInput(e.target.value)}
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                      placeholder="Ask something..."
-                      required
-                    />
-                  </div>
+                  <input
+                    type="text"
+                    name="chatInput"
+                    id="chatInput"
+                    value={chatInput}
+                    onChange={(e) => setChatInput(e.target.value)}
+                    className="w-full p-2 mt-1 bg-gray-700 border border-gray-600 rounded"
+                    placeholder="Ask something..."
+                    required
+                  />
                   <Button
                     type="submit"
+<<<<<<< HEAD
                     class="w-full mt-4 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
 >>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
+=======
+                    className="w-full mt-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg p-2"
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                   >
                     Send
                   </Button>
                 </form>
                 {chatResponse && (
+<<<<<<< HEAD
 <<<<<<< HEAD
                   <div className="mt-4 p-4 dark:bg-blue-900 rounded-lg flex-grow text-white">
                     <h4 className="font-bold">Response:</h4>
@@ -909,6 +1001,11 @@ export default function Home() {
                     <p class="text-gray-700 dark:text-gray-200">
                       {chatResponse}
                     </p>
+=======
+                  <div className="mt-4 p-4 bg-gray-700 rounded-lg flex-grow">
+                    <h4 className="font-bold">Response:</h4>
+                    <p>{chatResponse}</p>
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
                   </div>
                 )}
 >>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)

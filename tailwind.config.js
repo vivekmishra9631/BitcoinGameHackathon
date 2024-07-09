@@ -11,12 +11,18 @@ module.exports = konstaConfig({
   theme: {
     extend: {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
       transitionProperty: {
         height: "height",
         spacing: "margin, padding",
       },
+<<<<<<< HEAD
 =======
 >>>>>>> 426d059 (first commit)
+=======
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -26,11 +32,14 @@ module.exports = konstaConfig({
   },
   darkMode: "media", // or 'class'
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   theme: {
     extend: {},
   },
 >>>>>>> 426d059 (first commit)
+=======
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
   variants: {
     extend: {},
   },

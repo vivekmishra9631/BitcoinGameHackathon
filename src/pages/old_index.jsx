@@ -25,7 +25,11 @@ import {
   FUSE_PAY_MANAGER_ABI,
   FUSE_PAY_MANAGER_ADDRESS,
 } from "../utils/contracts";
+<<<<<<< HEAD
 
+=======
+import { pushImgToStorage, putJSONandGetHash } from "../utils/ipfsGateway";
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
 import Layout from "./Layout";
 import CeloICON from "/public/celo.png";
 
