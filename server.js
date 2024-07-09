@@ -15,7 +15,12 @@ const express = require('express');
 const axios = require('axios');
 const bodyParser = require('body-parser');
 require('dotenv').config();
+<<<<<<< HEAD
 >>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
+=======
+const path = require('path');
+const { generatePrompt, exampleQA } = require('./src/pages/api/promptGenerator');
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
 
 const app = express();
 app.use(bodyParser.json());
@@ -50,13 +55,29 @@ app.post("/api/chat", async (req, res) => {
 app.post('/api/chat', async (req, res) => {
   const { message } = req.body;
 
+  // Check if the message matches any predefined questions
+  const predefinedAnswer = exampleQA.find(qa => qa.question.toLowerCase() === message.toLowerCase());
+
+  if (predefinedAnswer) {
+    // If a match is found, respond with the predefined answer
+    res.json({ text: predefinedAnswer.answer });
+    return;
+  }
+
+  // If no match is found, proceed with the OpenAI API call
+  const prompt = generatePrompt(message);
+
   try {
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
       {
         model: 'gpt-4',
+<<<<<<< HEAD
         messages: [{ role: 'user', content: message }],
 >>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
+=======
+        messages: prompt,
+>>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
         max_tokens: 150,
         temperature: 0.7,
       },
