@@ -13,6 +13,9 @@ Please answer any questions the user might have about PayBridge, its features, b
 
 const exampleQA = [
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
   {
     question: "What is PayBridge?",
     answer:
@@ -48,6 +51,7 @@ const exampleQA = [
     answer:
       "Yes, PayBridge is designed to be user-friendly and suitable for enterprises of all sizes. It simplifies payroll processes and provides additional financial services for employees.",
   },
+<<<<<<< HEAD
 ];
 
 const generatePrompt = (userMessage) => {
@@ -99,26 +103,35 @@ module.exports = {
         question: "Is PayBridge suitable for all business sizes?",
         answer: "Yes, PayBridge is designed to be user-friendly and suitable for enterprises of all sizes. It simplifies payroll processes and provides additional financial services for employees."
     }
+=======
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
 ];
 
 const generatePrompt = (userMessage) => {
-    return [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: userMessage },
-    ];
+  return [
+    { role: "system", content: systemPrompt },
+    { role: "user", content: userMessage },
+  ];
 };
 
 const generateExamplePrompts = () => {
-    const examplePrompts = [];
-    exampleQA.forEach((qa) => {
-        examplePrompts.push(generatePrompt(qa.question));
-    });
-    return examplePrompts;
+  const examplePrompts = [];
+  exampleQA.forEach((qa) => {
+    examplePrompts.push(generatePrompt(qa.question));
+  });
+  return examplePrompts;
 };
 
 module.exports = {
+<<<<<<< HEAD
     generatePrompt,
     generateExamplePrompts,
     exampleQA
 >>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
+=======
+  generatePrompt,
+  generateExamplePrompts,
+  exampleQA,
+  systemPrompt,
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
 };
