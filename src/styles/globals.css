@@ -3,28 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255; /* Make text white */
+  --background-start-rgb: 29, 45, 68; /* Dark blue gradient start */
+  --background-end-rgb: 0, 82, 204; /* Light blue gradient end */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 29, 45, 68;
+    --background-end-rgb: 0, 82, 204;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
 }
+
+/* Add this CSS to your stylesheet */
+.button {
+  background-color: #1d2d44; /* Dark blue for buttons */
+  color: white; /* White text for buttons */
+}
+
+#faq-container {
+  overflow-y: auto; /* Add vertical scrollbar */
+  max-height: 300px; /* Set maximum height for the container */
+}
+
 .company-logo {
   display: flex;
   flex-direction: row;
@@ -69,5 +80,8 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .white-text {
+    color: white;
   }
 }

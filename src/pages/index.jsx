@@ -27,6 +27,7 @@ import {
 } from "../utils/contracts";
 import { pushImgToStorage, putJSONandGetHash } from "../utils/ipfsGateway";
 import Layout from "./Layout";
+import { exampleQA } from "./api/promptGenerator";
 
 export default function Home() {
   const { address } = useAccount();
@@ -48,6 +49,7 @@ export default function Home() {
   const [chatSheetOpened, setChatSheetOpened] = useState(false);
   const [chatInput, setChatInput] = useState("");
   const [chatResponse, setChatResponse] = useState("");
+  const [showAnswer, setShowAnswer] = useState(null);
 
   const openNotification = (setter) => {
     setNotificationWithButton(false);
@@ -121,10 +123,18 @@ export default function Home() {
     }
   };
 
+  const toggleAnswer = (index) => {
+    setShowAnswer(showAnswer === index ? null : index);
+  };
+
   return (
     <>
       <Layout>
-        <Navbar title="PayBridge" />
+        <Navbar
+          title={
+            <span className="text-gray-900 dark:text-gray-100">PayBridge</span>
+          }
+        />
         <div className="h-full">
           <Notification
             opened={notificationWithButton}
@@ -168,7 +178,7 @@ export default function Home() {
                   }
                   className="text-xs bg-black rounded-full text-white px-4 py-1.5 mr-3"
                 ></Chip>{" "}
-                <span className="text-sm font-medium ml-2">
+                <span className="text-sm font-bold ml-2 text-white">
                   Powered by Rootstock
                 </span>
                 <svg
@@ -184,10 +194,10 @@ export default function Home() {
                   ></path>
                 </svg>
               </a>
-              <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+              <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-gray-100">
                 We Help manage your Companys Finance
               </h1>
-              <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+              <p className="mb-8 text-lg font-normal text-gray-700 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-200">
                 Here at PayBridge we focus on markets where AI technology,
                 innovation, and capital can unlock long-term value and drive
                 economic growth.
@@ -195,7 +205,7 @@ export default function Home() {
               <div className="flex mb-8 align-center justify-center space-x-4 lg:mb-16 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                 <Link
                   onClick={() => setSheetOpened(true)}
-                  className="inline-flex bg-blue-600  max-w-sm justify-center items-center gap-x-3 text-center shadow-lg shadow-transparent hover:shadow-blue-700/50 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800"
+                  className="inline-flex bg-blue-700 max-w-sm justify-center items-center gap-x-3 text-center shadow-2xl shadow-transparent hover:shadow-blue-700/70 border border-transparent text-white font-bold rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800 hover:text-gray-200"
                 >
                   Register company
                   <svg
@@ -208,13 +218,13 @@ export default function Home() {
                     <path
                       d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
                       stroke="currentColor"
-                      strokeWidth="2"
+                      strokeWidth="4"
                       strokeLinecap="round"
                     />
                   </svg>
                 </Link>
                 <Link
-                  className=" max-w-sm inline-flex justify-center items-center gap-x-1 text-center bg-gray-600 shadow-2xl shadow-transparent hover:shadow-black-700/50 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800 mx-5"
+                  className="max-w-sm inline-flex justify-center items-center gap-x-1 text-center bg-blue-700 shadow-2xl shadow-transparent hover:shadow-blue-700/50 border border-transparent text-white font-bold text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800 mx-5 hover:text-gray-300"
                   href="/company"
                 >
                   View company
@@ -228,14 +238,14 @@ export default function Home() {
                     <path
                       d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
                       stroke="currentColor"
-                      strokeWidth="2"
+                      strokeWidth="4"
                       strokeLinecap="round"
                     />
                   </svg>
                 </Link>
                 <Link
                   onClick={() => setChatSheetOpened(true)}
-                  className="inline-flex bg-green-600 max-w-sm justify-center items-center gap-x-3 text-center shadow-lg shadow-transparent hover:shadow-green-700/50 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800"
+                  className="inline-flex bg-blue-700 max-w-sm justify-center items-center gap-x-3 text-center shadow-2xl shadow-transparent hover:shadow-blue-700/50 border border-transparent text-white font-bold rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:text-gray-100 dark:focus:ring-offset-gray-800 hover:text-gray-300"
                 >
                   Open Chatbot
                   <svg
@@ -248,7 +258,7 @@ export default function Home() {
                     <path
                       d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
                       stroke="currentColor"
-                      strokeWidth="2"
+                      strokeWidth="4"
                       strokeLinecap="round"
                     />
                   </svg>
@@ -294,10 +304,10 @@ export default function Home() {
               <div className="mt-5 sm:mt-10 lg:mt-0 lg:col-span-5">
                 <div className="space-y-6 sm:space-y-8">
                   <div className="space-y-2 md:space-y-4">
-                    <h2 className="font-bold text-3xl lg:text-4xl text-gray-800 dark:text-gray-200">
+                    <h2 className="font-bold text-3xl lg:text-4xl text-gray-300 dark:text-gray-200">
                       Kickstart Payrolls and Secure Work Loans Effortlessly
                     </h2>
-                    <p className="text-gray-500">
+                    <p className="text-gray-200">
                       Use our services to initiate payroll and transactions and
                       loan requests for your Team/ workers.
                     </p>
@@ -324,7 +334,7 @@ export default function Home() {
                         />
                       </svg>
 
-                      <span className="text-sm sm:text-base text-gray-500">
+                      <span className="text-sm sm:text-base text-gray-200">
                         <span className="font-bold">Low costs</span> – Covered
                         by Rootstock
                       </span>
@@ -350,7 +360,7 @@ export default function Home() {
                         />
                       </svg>
 
-                      <span className="text-sm sm:text-base text-gray-500">
+                      <span className="text-sm sm:text-base text-gray-200">
                         Seamless and Innovative Tech
                       </span>
                     </li>
@@ -375,7 +385,7 @@ export default function Home() {
                         />
                       </svg>
 
-                      <span className="text-sm sm:text-base text-gray-500">
+                      <span className="text-sm sm:text-base text-gray-200">
                         Scaling solutions{" "}
                         <span className="font-bold">
                           Improving Traditional systems
@@ -531,7 +541,7 @@ export default function Home() {
                 </button>
               </div>
               <div
-                className="p-4 md:p-5 mt-4 overflow-y-auto flex-1"
+                className="p-4 md:p-5 mt-4 overflow-y-auto overflow-hidden flex-1"
                 style={{ paddingBottom: "5rem" }}
               >
                 <form onSubmit={handleChatSubmit}>
@@ -547,17 +557,38 @@ export default function Home() {
                   />
                   <Button
                     type="submit"
-                    className="w-full mt-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg p-2"
+                    className="w-full mt-2 bg-blue-500 hover:bg-blue-500 text-white font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 shadow-2xl shadow-transparent hover:shadow-blue-500/50 hover:text-white"
                   >
                     Send
                   </Button>
                 </form>
                 {chatResponse && (
-                  <div className="mt-4 p-4 bg-gray-700 rounded-lg flex-grow">
+                  <div className="mt-4 p-4 dark:bg-blue-900 rounded-lg flex-grow text-white">
                     <h4 className="font-bold">Response:</h4>
                     <p>{chatResponse}</p>
                   </div>
                 )}
+                <div
+                  id="faq-container"
+                  className="mt-4 p-4 bg-gray-700 overflow-auto rounded-lg flex-grow text-white"
+                >
+                  <h4 className="font-bold">FAQ:</h4>
+                  {exampleQA.map((qa, index) => (
+                    <div key={index} className="mt-2">
+                      <button
+                        className="bg-gray-600 text-white p-2 rounded-lg w-full text-left"
+                        onClick={() => toggleAnswer(index)}
+                      >
+                        {qa.question}
+                      </button>
+                      {showAnswer === index && (
+                        <div className="bg-gray-500 p-2 rounded-lg mt-2">
+                          {qa.answer}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
