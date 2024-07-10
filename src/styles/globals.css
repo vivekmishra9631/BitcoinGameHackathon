@@ -4,6 +4,7 @@
 
 :root {
 <<<<<<< HEAD
+<<<<<<< HEAD
   --foreground-rgb: 255, 255, 255; /* Make text white */
   --background-start-rgb: 29, 45, 68; /* Dark blue gradient start */
   --background-end-rgb: 0, 82, 204; /* Light blue gradient end */
@@ -12,11 +13,17 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 >>>>>>> 426d059 (first commit)
+=======
+  --foreground-rgb: 255, 255, 255; /* Make text white */
+  --background-start-rgb: 29, 45, 68; /* Dark blue gradient start */
+  --background-end-rgb: 0, 82, 204; /* Light blue gradient end */
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
+<<<<<<< HEAD
 <<<<<<< HEAD
     --background-start-rgb: 29, 45, 68;
     --background-end-rgb: 0, 82, 204;
@@ -24,6 +31,10 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
 >>>>>>> 426d059 (first commit)
+=======
+    --background-start-rgb: 29, 45, 68;
+    --background-end-rgb: 0, 82, 204;
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
   }
 }
 
@@ -31,10 +42,14 @@ body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
     to bottom,
     rgb(var(--background-start-rgb)),
     rgb(var(--background-end-rgb))
   );
+<<<<<<< HEAD
 }
 
 /* Add this CSS to your stylesheet */
@@ -56,6 +71,21 @@ body {
     rgb(var(--background-start-rgb));
 }
 >>>>>>> 426d059 (first commit)
+=======
+}
+
+/* Add this CSS to your stylesheet */
+.button {
+  background-color: #1d2d44; /* Dark blue for buttons */
+  color: white; /* White text for buttons */
+}
+
+#faq-container {
+  overflow-y: auto; /* Add vertical scrollbar */
+  max-height: 300px; /* Set maximum height for the container */
+}
+
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
 .company-logo {
   display: flex;
   flex-direction: row;
@@ -102,9 +132,15 @@ body {
     text-wrap: balance;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   .white-text {
     color: white;
   }
 =======
 >>>>>>> 426d059 (first commit)
+=======
+  .white-text {
+    color: white;
+  }
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
 }

@@ -66,10 +66,14 @@ import { useAccount, useBalance } from "wagmi";
 import { pushImgToStorage, putJSONandGetHash } from "../utils/ipfsGateway";
 import Layout from "./Layout";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import CeloICON from "/public/celo.png";
 >>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
 =======
 >>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
+=======
+import { exampleQA } from "./api/promptGenerator";
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
 
 export default function Home() {
   const { address } = useAccount();
@@ -101,6 +105,7 @@ export default function Home() {
   const [chatSheetOpened, setChatSheetOpened] = useState(false);
   const [chatInput, setChatInput] = useState("");
   const [chatResponse, setChatResponse] = useState("");
+  const [showAnswer, setShowAnswer] = useState(null);
 
 >>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
   const openNotification = (setter) => {
@@ -199,6 +204,9 @@ export default function Home() {
   };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
   const toggleAnswer = (index) => {
     setShowAnswer(showAnswer === index ? null : index);
   };
@@ -211,6 +219,7 @@ export default function Home() {
             <span className="text-gray-900 dark:text-gray-100">PayBridge</span>
           }
         />
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
@@ -223,6 +232,8 @@ export default function Home() {
 =======
         <Navbar title="PayBridge" />
 >>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
+=======
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
         <div className="h-full">
           <Notification
             opened={notificationWithButton}
@@ -287,6 +298,7 @@ export default function Home() {
                   className="text-xs bg-black rounded-full text-white px-4 py-1.5 mr-3"
                 ></Chip>{" "}
                 <span className="text-sm font-bold ml-2 text-white">
+<<<<<<< HEAD
                   Powered by Rootstock
                 </span>
                 <svg
@@ -303,6 +315,8 @@ export default function Home() {
                   className="text-xs bg-black rounded-full text-white px-4 py-1.5 mr-3"
                 ></Chip>{" "}
                 <span className="text-sm font-medium ml-2">
+=======
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
                   Powered by Rootstock
                 </span>
                 <svg
@@ -326,6 +340,7 @@ export default function Home() {
                 </svg>
               </a>
               <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-gray-100">
+<<<<<<< HEAD
                 We Help manage your Companys Finance
               </h1>
               <p className="mb-8 text-lg font-normal text-gray-700 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-200">
@@ -348,9 +363,11 @@ export default function Home() {
                 </svg>
               </a>
               <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+=======
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
                 We Help manage your Companys Finance
               </h1>
-              <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+              <p className="mb-8 text-lg font-normal text-gray-700 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-200">
                 Here at PayBridge we focus on markets where AI technology,
                 innovation, and capital can unlock long-term value and drive
                 economic growth.
@@ -358,8 +375,12 @@ export default function Home() {
               <div className="flex mb-8 align-center justify-center space-x-4 lg:mb-16 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                 <Link
                   onClick={() => setSheetOpened(true)}
+<<<<<<< HEAD
                   className="inline-flex bg-blue-600  max-w-sm justify-center items-center gap-x-3 text-center shadow-lg shadow-transparent hover:shadow-blue-700/50 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800"
 >>>>>>> 426d059 (first commit)
+=======
+                  className="inline-flex bg-blue-700 max-w-sm justify-center items-center gap-x-3 text-center shadow-2xl shadow-transparent hover:shadow-blue-700/70 border border-transparent text-white font-bold rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800 hover:text-gray-200"
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
                 >
                   Register company
                   <svg
@@ -373,20 +394,28 @@ export default function Home() {
                       d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
                       stroke="currentColor"
 <<<<<<< HEAD
+<<<<<<< HEAD
                       strokeWidth="4"
 =======
                       strokeWidth="2"
 >>>>>>> 426d059 (first commit)
+=======
+                      strokeWidth="4"
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
                       strokeLinecap="round"
                     />
                   </svg>
                 </Link>
                 <Link
 <<<<<<< HEAD
+<<<<<<< HEAD
                   className="max-w-sm inline-flex justify-center items-center gap-x-1 text-center bg-blue-700 shadow-2xl shadow-transparent hover:shadow-blue-700/50 border border-transparent text-white font-bold text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800 mx-5 hover:text-gray-300"
 =======
                   className=" max-w-sm inline-flex justify-center items-center gap-x-1 text-center bg-gray-600 shadow-2xl shadow-transparent hover:shadow-black-700/50 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800 mx-5"
 >>>>>>> 426d059 (first commit)
+=======
+                  className="max-w-sm inline-flex justify-center items-center gap-x-1 text-center bg-blue-700 shadow-2xl shadow-transparent hover:shadow-blue-700/50 border border-transparent text-white font-bold text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800 mx-5 hover:text-gray-300"
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
                   href="/company"
                 >
                   View company
@@ -400,6 +429,7 @@ export default function Home() {
                     <path
                       d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
                       stroke="currentColor"
+<<<<<<< HEAD
 <<<<<<< HEAD
                       strokeWidth="4"
                       strokeLinecap="round"
@@ -425,13 +455,16 @@ export default function Home() {
 =======
                       strokeWidth="2"
 >>>>>>> 426d059 (first commit)
+=======
+                      strokeWidth="4"
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
                       strokeLinecap="round"
                     />
                   </svg>
                 </Link>
                 <Link
                   onClick={() => setChatSheetOpened(true)}
-                  className="inline-flex bg-green-600 max-w-sm justify-center items-center gap-x-3 text-center shadow-lg shadow-transparent hover:shadow-green-700/50 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800"
+                  className="inline-flex bg-blue-700 max-w-sm justify-center items-center gap-x-3 text-center shadow-2xl shadow-transparent hover:shadow-blue-700/50 border border-transparent text-white font-bold rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:text-gray-100 dark:focus:ring-offset-gray-800 hover:text-gray-300"
                 >
                   Open Chatbot
                   <svg
@@ -444,7 +477,7 @@ export default function Home() {
                     <path
                       d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
                       stroke="currentColor"
-                      strokeWidth="2"
+                      strokeWidth="4"
                       strokeLinecap="round"
                     />
                   </svg>
@@ -491,6 +524,7 @@ export default function Home() {
                 <div className="space-y-6 sm:space-y-8">
                   <div className="space-y-2 md:space-y-4">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <h2 className="font-bold text-3xl lg:text-4xl text-gray-300 dark:text-gray-200">
                       Kickstart Payrolls and Secure Work Loans Effortlessly
                     </h2>
@@ -505,6 +539,12 @@ export default function Home() {
                       Use our services to inittiate payroll and transactions and
 >>>>>>> 426d059 (first commit)
 =======
+=======
+                    <h2 className="font-bold text-3xl lg:text-4xl text-gray-300 dark:text-gray-200">
+                      Kickstart Payrolls and Secure Work Loans Effortlessly
+                    </h2>
+                    <p className="text-gray-200">
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
                       Use our services to initiate payroll and transactions and
 >>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
                       loan requests for your Team/ workers.
@@ -533,6 +573,9 @@ export default function Home() {
                       </svg>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
                       <span className="text-sm sm:text-base text-gray-200">
                         <span className="font-bold">Low costs</span> – Covered
                         by Rootstock
@@ -569,10 +612,14 @@ export default function Home() {
                       </svg>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                       <span className="text-sm sm:text-base text-gray-200">
 =======
                       <span className="text-sm sm:text-base text-gray-500">
 >>>>>>> 426d059 (first commit)
+=======
+                      <span className="text-sm sm:text-base text-gray-200">
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
                         Seamless and Innovative Tech
                       </span>
                     </li>
@@ -598,10 +645,14 @@ export default function Home() {
                       </svg>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                       <span className="text-sm sm:text-base text-gray-200">
 =======
                       <span className="text-sm sm:text-base text-gray-500">
 >>>>>>> 426d059 (first commit)
+=======
+                      <span className="text-sm sm:text-base text-gray-200">
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
                         Scaling solutions{" "}
                         <span className="font-bold">
                           Improving Traditional systems
@@ -898,6 +949,7 @@ export default function Home() {
               </div>
               <div
                 className="p-4 md:p-5 mt-4 overflow-y-auto overflow-hidden flex-1"
+<<<<<<< HEAD
                 style={{ paddingBottom: "5rem" }}
               >
                 <form onSubmit={handleChatSubmit}>
@@ -939,6 +991,8 @@ export default function Home() {
               </div>
               <div
                 className="p-4 md:p-5 mt-4 overflow-y-auto flex-1"
+=======
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
                 style={{ paddingBottom: "5rem" }}
               >
                 <form onSubmit={handleChatSubmit}>
@@ -955,11 +1009,15 @@ export default function Home() {
                   <Button
                     type="submit"
 <<<<<<< HEAD
+<<<<<<< HEAD
                     class="w-full mt-4 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
 >>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
 =======
                     className="w-full mt-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg p-2"
 >>>>>>> a20bb59 (Modified chatbot wiith Questions, will fix color scheme for site later. If needed can add prepopulated questions as drop down options as opposed to the way it is now)
+=======
+                    className="w-full mt-2 bg-blue-500 hover:bg-blue-500 text-white font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 shadow-2xl shadow-transparent hover:shadow-blue-500/50 hover:text-white"
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
                   >
                     Send
                   </Button>
@@ -967,6 +1025,9 @@ export default function Home() {
                 {chatResponse && (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
                   <div className="mt-4 p-4 dark:bg-blue-900 rounded-lg flex-grow text-white">
                     <h4 className="font-bold">Response:</h4>
                     <p>{chatResponse}</p>
@@ -993,6 +1054,7 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+<<<<<<< HEAD
 =======
                   <div class="mt-4 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
                     <h4 class="font-bold text-gray-900 dark:text-white">
@@ -1009,6 +1071,8 @@ export default function Home() {
                   </div>
                 )}
 >>>>>>> e4514af (Added Chat API integration, updated packages, tested local setup, and added server.js to root directory)
+=======
+>>>>>>> 53bf2e0 (Added features to chatbot including speaking within context about PayBridge application when answering questions, FAQ: section for range of questions, updated UI for readability)
               </div>
             </div>
           </div>
