@@ -173,7 +173,7 @@ export default function Home() {
                     <img
                       alt="rootstock"
                       className="ios:h-7 material:h-6 rounded-full"
-                      src="/rootstock.jpg"
+                      src="..public/rootstock.jpg"
                     />
                   }
                   className="text-xs bg-black rounded-full text-white px-4 py-1.5 mr-3"
