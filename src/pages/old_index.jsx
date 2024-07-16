@@ -25,7 +25,7 @@ import {
   FUSE_PAY_MANAGER_ABI,
   FUSE_PAY_MANAGER_ADDRESS,
 } from "../utils/contracts";
-import { pushImgToStorage, putJSONandGetHash } from "../utils/ipfsGateway";
+
 import Layout from "./Layout";
 import CeloICON from "/public/celo.png";
 
