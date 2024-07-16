@@ -274,9 +274,9 @@ export default function Home() {
                     <img
                       className="rounded-xl"
                       src={
-                        "https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80"
+                        "https://images.unsplash.com/photo-1563986768711-b3bde3dc821e?q=80&w=2068&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       }
-                      alt="Image Description"
+                      alt="Stocks shown on a macbook"
                     />
                   </div>
 
@@ -284,17 +284,17 @@ export default function Home() {
                     <img
                       className="rounded-xl"
                       src={
-                        "https://images.unsplash.com/photo-1605629921711-2f6b00c6bbf4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+                        "https://images.unsplash.com/photo-1674104151261-fdade9ab2466?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       }
-                      alt="Image Description"
+                      alt="Stocks shown on a tablet"
                     />
                   </div>
 
                   <div className="col-span-5">
                     <img
                       className="rounded-xl"
-                      src="https://images.unsplash.com/photo-1600194992440-50b26e0a0309?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
-                      alt="Image Description"
+                      src="https://images.unsplash.com/photo-1639917714192-557a6143f788?q=80&w=1894&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Stocks on a desktop"
                     />
                   </div>
                 </div>
@@ -550,7 +550,7 @@ export default function Home() {
                     id="chatInput"
                     value={chatInput}
                     onChange={(e) => setChatInput(e.target.value)}
-                    className="w-full p-2 mt-1 bg-gray-700 border border-gray-600 rounded"
+                    className="w-full p-2 mt-1 text-black bg-gray-100 border border-gray-600 rounded"
                     placeholder="Ask something..."
                     required
                   />

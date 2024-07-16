@@ -1,42 +1,42 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { readContract, waitForTransaction, writeContract } from "@wagmi/core";
 import axios from "axios";
+import { ethers } from "ethers";
 import {
-  Page,
-  Navbar,
   Block,
+  BlockTitle,
   Button,
   Card,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  Preloader,
-  Table,
+  Chip,
+  Link,
   List,
   ListItem,
-  Link,
+  Navbar,
+  Page,
+  Preloader,
   Sheet,
-  BlockTitle,
-  Chip,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
 } from "konsta/react";
-import { ethers } from "ethers";
-import Layout from "../Layout";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import { FaWallet } from "react-icons/fa";
 import { FaMoneyCheckDollar, FaPeopleGroup } from "react-icons/fa6";
 import { useAccount } from "wagmi";
-import { shortenAddress } from "../../utils/shortenAddress";
-import { readContract, writeContract, waitForTransaction } from "@wagmi/core";
 import {
   PAYBRIDGE_ABI,
   PAYBRIDGE_MANAGER_ABI,
   PAYBRIDGE_MANAGER_ADDRESS,
-  USDT_CONTRACT_ADDRESS,
-  USDT_ABI,
   STAKER_ABI,
+  USDT_ABI,
+  USDT_CONTRACT_ADDRESS,
 } from "../../utils/contracts";
+import { shortenAddress } from "../../utils/shortenAddress";
+import Layout from "../Layout";
 
 const Index = () => {
   const { address } = useAccount();
@@ -90,13 +90,13 @@ const Index = () => {
       <Navbar title="Staking" />
 
       <div className="m-5 p-5">
-        <BlockTitle> Stake CELO </BlockTitle>
+        <BlockTitle> Stake TRBTC </BlockTitle>
 
         <Block>
           <div class="max-w-sm mx-auto">
             <strong className="mb-8 pb-4">
               {" "}
-              <h1>Current Reward Rate: 0.5 cUSD / CELO </h1>{" "}
+              <h1>Current Reward Rate: 0.5 RBTC / TRBTC </h1>{" "}
             </strong>
 
             <div class="mb-5 mt-5">
@@ -104,7 +104,7 @@ const Index = () => {
                 for="name"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Stake Amount (CELO)
+                Stake Amount (TRBTC)
               </label>
 
               <input
@@ -121,7 +121,7 @@ const Index = () => {
                 for="name"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Reward (cUSD)
+                Reward (RBTC)
               </label>
               <input
                 value={"100 eth"}
