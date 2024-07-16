@@ -8,34 +8,33 @@ export default function MyApp() {
   const [disconnect, setDisconnect] = useState(null);
   const [address, setAddress] = useState('');
 
-  const login = async () => {
-    try {
-      const { provider, disconnect } = await rLogin.connect();
-      const web3Provider = new providers.Web3Provider(provider);
-      const signer = web3Provider.getSigner(0);
-      const userAddress = await signer.getAddress();
-      setDisconnect(disconnect);
-      setAddress(userAddress);
-      setIsLoggedIn(true);
-    } catch (error) {
-      console.error(error);
-    }
+  const login = () => {
+    rLogin
+      .connect()
+      .then(({ provider, disconnect }) => {
+        const web3Provider = new providers.Web3Provider(provider);
+        const signer = web3Provider.getSigner(0);
+        setDisconnect(disconnect);
+        signer.getAddress().then(setAddress);
+        setIsLoggedIn(true);
+      })
+      .catch(console.error);
   };
 
   const logout = async () => {
-    await disconnect();
+    await disconnect;
     setDisconnect(null);
     setAddress('');
     setIsLoggedIn(false);
   };
 
   return (
-    <div>
+    <div className="MyApp">
       <button onClick={login} disabled={isLoggedIn}>
-        Login
+        login
       </button>
       <button onClick={logout} disabled={!isLoggedIn}>
-        Logout
+        logout
       </button>
       <p>{address}</p>
     </div>
