@@ -22,10 +22,9 @@ import { useEffect, useState } from "react";
 import { useAccount, useBalance } from "wagmi";
 import { config } from "../utils/config";
 import {
-  FUSE_PAY_MANAGER_ABI,
-  FUSE_PAY_MANAGER_ADDRESS,
+  PAYBRIDGE_MANAGER_ABI,
+  PAYBRIDGE_MANAGER_ADDRESS,
 } from "../utils/contracts";
-import { pushImgToStorage, putJSONandGetHash } from "../utils/ipfsGateway";
 import Layout from "./Layout";
 import { exampleQA } from "./api/promptGenerator";
 
@@ -74,7 +73,7 @@ export default function Home() {
 
   const createCompany = async () => {
     try {
-      if (companyLogo && companyName && description) {
+      if (companyName && description) {
         setInTxn(true);
 
         const logoCID = await pushImgToStorage(companyLogo);
@@ -87,10 +86,10 @@ export default function Home() {
         // 0x763b9295081c8e04F444F44A1cF14D7379F579c2
         const companyCID = await putJSONandGetHash(obj, companyName);
         console.log("COMPANY INSERTED", companyCID);
-        console.log(FUSE_PAY_MANAGER_ADDRESS);
+        console.log(PAYBRIDGE_MANAGER_ADDRESS);
         const { hash } = await writeContract({
-          address: FUSE_PAY_MANAGER_ADDRESS,
-          abi: FUSE_PAY_MANAGER_ABI,
+          address: PAYBRIDGE_MANAGER_ADDRESS,
+          abi: PAYBRIDGE_MANAGER_ABI,
           functionName: "createCompany",
           args: [companyCID],
         });
@@ -475,20 +474,20 @@ export default function Home() {
                     required
                   />
                 </div>
-                <div>
-                  <label
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    htmlFor="default_size"
-                  >
-                    Company Logo
-                  </label>
-                  <input
-                    onChange={handleUploadImage}
-                    className="block w-full mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                    id="default_size"
-                    type="file"
-                  />
-                </div>
+              {/* <div>
+                <label
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="default_size"
+                >
+                  Company Logo
+                </label>
+                <input
+                  onChange={handleUploadImage}
+                  className="block w-full mb-5 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                  id="default_size"
+                  type="file"
+                />
+              </div> */}
 
                 {!inTxn ? (
                   <Button

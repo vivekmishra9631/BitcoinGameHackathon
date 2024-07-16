@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24;
+pragma solidity ^0.8.19;
 
 contract Staker {
     struct StakeInfo {
@@ -13,19 +13,20 @@ contract Staker {
     uint256 public constant withdrawalPeriod = 120 seconds;
     uint256 public constant claimPeriod = 240 seconds;
 
+
     event Staked(address indexed sender, uint256 amount);
     event Withdrawn(address indexed sender, uint256 amount);
 
-    function stake() public payable {
-        require(msg.value > 0, "Amount must be greater than 0");
+    function stake(uint256 _amount) public payable {
+        require( _amount > 0, "Amount must be greater than 0");
 
         StakeInfo storage userStake = stakes[msg.sender];
-        userStake.amount += msg.value;
+        userStake.amount +=  _amount;
         if (userStake.depositTimestamp == 0) {
             userStake.depositTimestamp = block.timestamp;
         }
 
-        emit Staked(msg.sender, msg.value);
+        emit Staked(msg.sender,  _amount);
     }
 
  function withdraw() public {
