@@ -28,9 +28,10 @@ import { FaWallet } from "react-icons/fa";
 import { FaMoneyCheckDollar, FaPeopleGroup } from "react-icons/fa6";
 import { useAccount } from "wagmi";
 import {
-  FUSE_PAY_ABI,
-  FUSE_PAY_MANAGER_ABI,
-  FUSE_PAY_MANAGER_ADDRESS,
+  PAYBRIDGE_ABI,
+  PAYBRIDGE_MANAGER_ABI,
+  PAYBRIDGE_MANAGER_ADDRESS,
+  STAKER_ABI,
   USDT_ABI,
   USDT_CONTRACT_ADDRESS,
 } from "../../utils/contracts";
@@ -49,6 +50,39 @@ const Index = () => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   const [loanRequests, setLoanRequests] = useState([]);
+
+  const stake = async () => {
+    try {
+      if (!stakeAmount) {
+        alert("Please enter stake amount");
+        console.log("Please enter stake amount");
+        return;
+      }
+
+      setInTxn(true);
+
+      // Convert stakeAmount to Wei
+
+      const amount = stakeAmount;
+
+      const { hash } = await writeContract({
+        abi: STAKER_ABI,
+        functionName: "stake",
+        args: [amount],
+      });
+
+      const receipt = await waitForTransaction({ hash });
+      if (!receipt) {
+        console.log("Failed to request stake Amount");
+        setInTxn(false);
+        return;
+      }
+      console.log("Stake Amount requested successfull");
+    } catch (error) {
+      console.log(error);
+      setInTxn(false);
+    }
+  };
 
   useEffect(() => {}, [address]);
   return (
@@ -102,7 +136,10 @@ const Index = () => {
             {inTxn ? (
               <Preloader className="center-item mt-3" />
             ) : (
-              <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              <button
+                onClick={stake}
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
                 Stake
               </button>
             )}
