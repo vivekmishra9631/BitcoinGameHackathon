@@ -19,7 +19,7 @@
 - **Loan Management**: Employees can apply for a loan from their company and repay it through their salary payments.
 
 ## Deployed Rootstock Contract Address
--[0xa8979a7102dC8688c458Dec7B868816B0b8FE142](https://explorer.testnet.rootstock.io/address/0xa8979a7102dc8688c458dec7b868816b0b8fe142)
+-[0xd4dC198462fDF966C3ED0c75817294Ade298AB5E]((https://explorer.testnet.rootstock.io/address/0xd4dc198462fdf966c3ed0c75817294ade298ab5e))
 
 
 ## How It Works
