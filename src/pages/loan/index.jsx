@@ -28,11 +28,9 @@ import { FaWallet } from "react-icons/fa";
 import { FaMoneyCheckDollar, FaPeopleGroup } from "react-icons/fa6";
 import { useAccount } from "wagmi";
 import {
-  FUSE_PAY_ABI,
-  FUSE_PAY_MANAGER_ABI,
-  FUSE_PAY_MANAGER_ADDRESS,
-  USDT_ABI,
-  USDT_CONTRACT_ADDRESS,
+  PAYBRIDGE_ABI,
+  PAYBRIDGE_MANAGER_ABI,
+  PAYBRIDGE_MANAGER_ADDRESS,
 } from "../../utils/contracts";
 import { shortenAddress } from "../../utils/shortenAddress";
 import Layout from "../Layout";
@@ -66,7 +64,7 @@ const Index = () => {
 
       const { hash } = await writeContract({
         address: companyAddress,
-        abi: FUSE_PAY_ABI,
+        abi: PAYBRIDGE_ABI,
         functionName: "requestLoan",
         args: [amount, reason],
       });
@@ -89,7 +87,7 @@ const Index = () => {
       alert(companyAdd);
       const allLoanRequests = await readContract({
         address: companyAdd,
-        abi: FUSE_PAY_ABI,
+        abi: PAYBRIDGE_ABI,
         functionName: "getAllLoanRequests",
         args: [],
       });
@@ -102,21 +100,21 @@ const Index = () => {
   const getUserCompanies = async () => {
     try {
       const employeeCompanies = await readContract({
-        address: FUSE_PAY_MANAGER_ADDRESS,
-        abi: FUSE_PAY_MANAGER_ABI,
+        address: PAYBRIDGE_MANAGER_ADDRESS,
+        abi: PAYBRIDGE_MANAGER_ABI,
         functionName: "getEmployeeCompanies",
         args: [address],
       });
       const adminCompanies = await readContract({
-        address: FUSE_PAY_MANAGER_ADDRESS,
-        abi: FUSE_PAY_MANAGER_ABI,
+        address: PAYBRIDGE_MANAGER_ADDRESS,
+        abi: PAYBRIDGE_MANAGER_ABI,
         functionName: "getAdminCompanies",
         args: [address],
       });
 
       // const getAllCompanies = await readContract({
-      //   address: FUSE_PAY_MANAGER_ADDRESS,
-      //   abi: FUSE_PAY_MANAGER_ABI,
+      //   address: PAYBRIDGE_MANAGER_ADDRESS,
+      //   abi: PAYBRIDGE_MANAGER_ABI,
       //   functionName: "getCompanies",
       //   args: [],
       // });
@@ -128,14 +126,14 @@ const Index = () => {
       for (let i = 0; i < employeeCompanies.length; i++) {
         const companyCID = await readContract({
           address: employeeCompanies[i],
-          abi: FUSE_PAY_ABI,
+          abi: PAYBRIDGE_ABI,
           functionName: "companyCID",
           args: [],
         });
 
         const admin = await readContract({
           address: employeeCompanies[i],
-          abi: FUSE_PAY_ABI,
+          abi: PAYBRIDGE_ABI,
           functionName: "admin",
           args: [],
         });
@@ -166,7 +164,7 @@ const Index = () => {
       for (let i = 0; i < adminCompanies.length; i++) {
         const companyCID = await readContract({
           address: adminCompanies[i],
-          abi: FUSE_PAY_ABI,
+          abi: PAYBRIDGE_ABI,
           functionName: "companyCID",
           args: [],
         });
