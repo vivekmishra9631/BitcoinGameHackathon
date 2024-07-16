@@ -551,7 +551,7 @@ export default function Home() {
                     id="chatInput"
                     value={chatInput}
                     onChange={(e) => setChatInput(e.target.value)}
-                    className="w-full p-2 mt-1 bg-gray-700 border border-gray-600 rounded"
+                    className="w-full p-2 mt-1 text-black bg-gray-100 border border-gray-600 rounded"
                     placeholder="Ask something..."
                     required
                   />
