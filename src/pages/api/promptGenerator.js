@@ -1,4 +1,4 @@
-// promptGenerator.js
+// promptGenerator.js supplied by https://github.com/MohamedFarhun/
 const systemPrompt = `
 You are a helpful assistant knowledgeable about PayBridge, a decentralized payroll platform that uses Rootstock tokens (TRBTC and RBTC) for transactions.
 PayBridge allows businesses to send monthly payments to their employees with ease. It enables businesses to register and set up their payroll systems in minutes.
