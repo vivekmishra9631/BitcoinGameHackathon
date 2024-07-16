@@ -4,7 +4,7 @@
 
 ## Live App
 
-[PayBridge](https://vercel.paybridge.com/)
+[PayBridge](https://pay-bridge-bitcoin-games.vercel.app/)
 
 ## Overview
 

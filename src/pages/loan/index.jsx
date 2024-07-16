@@ -1,41 +1,41 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { readContract, waitForTransaction, writeContract } from "@wagmi/core";
 import axios from "axios";
+import { ethers } from "ethers";
 import {
-  Page,
-  Navbar,
   Block,
+  BlockTitle,
   Button,
   Card,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  Preloader,
-  Table,
+  Chip,
+  Link,
   List,
   ListItem,
-  Link,
+  Navbar,
+  Page,
+  Preloader,
   Sheet,
-  BlockTitle,
-  Chip,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
 } from "konsta/react";
-import { ethers } from "ethers";
-import Layout from "../Layout";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import { FaWallet } from "react-icons/fa";
 import { FaMoneyCheckDollar, FaPeopleGroup } from "react-icons/fa6";
 import { useAccount } from "wagmi";
-import { shortenAddress } from "../../utils/shortenAddress";
-import { readContract, writeContract, waitForTransaction } from "@wagmi/core";
 import {
   FUSE_PAY_ABI,
   FUSE_PAY_MANAGER_ABI,
   FUSE_PAY_MANAGER_ADDRESS,
-  USDT_CONTRACT_ADDRESS,
   USDT_ABI,
+  USDT_CONTRACT_ADDRESS,
 } from "../../utils/contracts";
+import { shortenAddress } from "../../utils/shortenAddress";
+import Layout from "../Layout";
 
 const Index = () => {
   const { address } = useAccount();
@@ -257,7 +257,7 @@ const Index = () => {
                 for="name"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
-                Loan Amount(cUsd)
+                Loan Amount(RBTC)
               </label>
               <input
                 onChange={(e) => setLoanAmount(e.target.value)}
@@ -280,7 +280,7 @@ const Index = () => {
                 type="text"
                 id="text"
                 class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                placeholder="emergency"
+                placeholder="Emergency causes"
                 required
               />
             </div>
