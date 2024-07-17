@@ -13,7 +13,6 @@ A decentralized payroll platform that enables businesses to seamlessly make mont
 ### Team Members
 
 - [Vivek Mishra](https://github.com/vivekmishra9631)
-- [Michael Roy](https://github.com/its-michaelroy)
 - [Mohamed Farhun](https://github.com/MohamedFarhun)
 
 ## Features
